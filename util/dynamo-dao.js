@@ -36,7 +36,7 @@ module.exports = class DynamoDAO {
       }
     };
 
-    dynamo.get(params, (error, result => {
+    this.dynamo.get(params, (error, result) => {
       if (error) {
         console.error(error);
         callback(new Error('Could not get item.'));
@@ -49,7 +49,7 @@ module.exports = class DynamoDAO {
       };
 
       callback(null, response);
-    }))
+    });
   }
 
   update(model, callback) {
